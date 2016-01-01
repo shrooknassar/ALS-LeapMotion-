@@ -1,4 +1,6 @@
 
+package com.asl.graduationproject; 
+
 import java.io.IOException;
 import com.leapmotion.leap.*;
 import com.leapmotion.leap.Finger.Type;
@@ -6,7 +8,7 @@ import com.leapmotion.leap.Gesture.State;
 
 
 
-class LeapListener extends Listener{
+class NumbersTranslation extends Listener{
 	public void onInit(Controller controller){
 		System.out.println("Initialized");
 	}
