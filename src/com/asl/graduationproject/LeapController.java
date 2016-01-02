@@ -8,6 +8,7 @@ import com.leapmotion.leap.Gesture.State;
 
 
 public class LeapController {
+	/*
 	public static void main(String[] args) {
 		
 		Controller controller = new Controller();
@@ -24,6 +25,8 @@ public class LeapController {
 		}
 		
 		controller.removeListener(listener);
+		
 
 	}
+	*/
 }
