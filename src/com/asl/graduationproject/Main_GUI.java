@@ -56,8 +56,9 @@ public class Main_GUI {
 			public void actionPerformed(ActionEvent arg0) {
 				Controller controller = new Controller();
 				NumbersTranslation listener = new NumbersTranslation();
-
+				UpdateServosLocation servoListener = new UpdateServosLocation() ; 
 				controller.addListener(listener);
+				controller.addListener(servoListener);
 				
 				System.out.println("press enter to quit");
 				
@@ -68,6 +69,7 @@ public class Main_GUI {
 				}
 				
 				controller.removeListener(listener);
+				controller.removeListener(servoListener);
 			}
 		});
 		btnTranslateNumbers.setForeground(new Color(0, 102, 102));
@@ -79,8 +81,10 @@ public class Main_GUI {
 			public void actionPerformed(ActionEvent e) {
 				Controller controller = new Controller();
 				AlphabetTranslation listener = new AlphabetTranslation();
-
+				UpdateServosLocation servoListener = new UpdateServosLocation() ; 
+			
 				controller.addListener(listener);
+				controller.addListener(servoListener);
 				
 				System.out.println("press enter to quit");
 				
@@ -91,6 +95,7 @@ public class Main_GUI {
 				}
 				
 				controller.removeListener(listener);
+				controller.removeListener(servoListener);
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 102, 102));
