@@ -62,8 +62,60 @@ public class AlphabetTranslation extends Listener {
 			Bone pinkyFingerIntermediateBone = pinkyFinger.bone(Bone.Type.TYPE_INTERMEDIATE); 
 			Bone pinkyFingerDistalBone = pinkyFinger.bone(Bone.Type.TYPE_DISTAL); 
 			//thumbFinger.width()
-			//float angle = thumbFinger.direction().angleTo(indexFinger.direction());
-			//
+			float angleBetweenThumbAndIndex = thumbFinger.direction().angleTo(indexFinger.direction());
+			float angleBetweeIndexAndMiddle = indexFinger.direction().angleTo(middleFinger.direction());
+			float angleBetweenMiddleAndRing = middleFinger.direction().angleTo(ringFinger.direction());
+			float angleBetweenRingAndPinky = ringFinger.direction().angleTo(pinkyFinger.direction());
+			
+			
+			if( (thumbFinger.tipPosition().getY() > indexFinger.tipPosition().getY() && thumbFinger.tipPosition().getY() > middleFinger.tipPosition().getY() &&  thumbFinger.tipPosition().getY() > ringFinger.tipPosition().getY() && thumbFinger.tipPosition().getY() > pinkyFinger.tipPosition().getY() ) && 
+					 (Math.abs(indexFinger.tipPosition().getZ()-firstHand.palmPosition().getZ() ) <= 10 &&  Math.abs(middleFinger.tipPosition().getZ()-firstHand.palmPosition().getZ() ) <= 10  && Math.abs(ringFinger.tipPosition().getZ()-firstHand.palmPosition().getZ() ) <= 10 &&  Math.abs(pinkyFinger.tipPosition().getZ()-firstHand.palmPosition().getZ() ) <= 10 ))
+			{
+				System.out.println("A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A|A");
+			}
+			
+			if( (pinkyFinger.tipPosition().getY()-thumbFinger.tipPosition().getY() >=20 && ringFinger.tipPosition().getY()-thumbFinger.tipPosition().getY() >=25 && middleFinger.tipPosition().getY()-thumbFinger.tipPosition().getY() >=30 && indexFinger.tipPosition().getY()-thumbFinger.tipPosition().getY() >=25) &&
+					(thumbFinger.tipPosition().getX()>=(pinkyFinger.tipPosition().getX()-pinkyFinger.width() ) &&  (thumbFinger.tipPosition().getX()<=(middleFinger.tipPosition().getX() ) ) ) )
+			{
+				System.out.println("B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B|B");
+			}
+			
+			if( (indexFinger.tipPosition().getY()-thumbFinger.tipPosition().getY() >= 40 &&  indexFinger.tipPosition().getY()-middleFinger.tipPosition().getY() >= 40 && indexFinger.tipPosition().getY()-ringFinger.tipPosition().getY() >= 40 && indexFinger.tipPosition().getY()-pinkyFinger.tipPosition().getY() >= 40 ) &&
+					(thumbFinger.tipPosition().getY()-firstHand.palmPosition().getY() <=10 && middleFinger.tipPosition().getY()-firstHand.palmPosition().getY() <=10 && ringFinger.tipPosition().getY()-firstHand.palmPosition().getY() <=10 && pinkyFinger.tipPosition().getY()-firstHand.palmPosition().getY() <=10) )
+			{
+				System.out.println("D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D");
+			}
+			
+			if( (Math.abs(thumbFinger.tipPosition().getY() - indexFinger.tipPosition().getY()) <= 5 ) && (pinkyFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=20 &&  ringFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=30  && middleFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=35   ) )
+			{
+				System.out.println("F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F");
+			}
+			
+			if( (angleBetweenThumbAndIndex>=60 ) && (indexFinger.tipPosition().getY() - firstHand.palmPosition().getY() >=40 ) &&
+					(indexFinger.tipPosition().getY() - middleFinger.tipPosition().getY() >=40 && indexFinger.tipPosition().getY() - ringFinger.tipPosition().getY() >=40 && indexFinger.tipPosition().getY() - pinkyFinger.tipPosition().getY() >=40)  )
+			{
+				System.out.println("L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L|L");
+			}
+			
+			if( (thumbFinger.tipPosition().getX() >= (middleFinger.tipPosition().getX()-middleFinger.width() ) &&  thumbFinger.tipPosition().getX() <= indexFinger.tipPosition().getX()  )  &&
+					(pinkyFinger.tipPosition().getY() - ringFinger.tipPosition().getY() >= 40 && pinkyFinger.tipPosition().getY() - middleFinger.tipPosition().getY() >= 40 && pinkyFinger.tipPosition().getY() - indexFinger.tipPosition().getY() >= 35 )   )
+			{
+				System.out.println("I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I|I");
+			}
+			
+			if(  ( Math.abs(pinkyFingerDistalBone.center().getY() - firstHand.palmPosition().getY() ) <=15 &&  Math.abs(ringFingerDistalBone.center().getY() - firstHand.palmPosition().getY() ) <=25   )  &&  thumbFinger.tipPosition().getY() - firstHand.palmPosition().getY() >=20 &&
+					(middleFinger.tipPosition().getY() - firstHand.palmPosition().getY() >=40 && indexFinger.tipPosition().getY() - firstHand.palmPosition().getY() >= 40) && (thumbFinger.tipPosition().getX()>middleFinger.tipPosition().getX() && thumbFinger.tipPosition().getX()<indexFinger.tipPosition().getX() ) )
+			{
+				System.out.println("K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K|K");
+			}
+			
+			int value=40; // da half length of metacapals but use plam position butter than metacapals position for each type finger!!
+			if((2*firstHand.sphereRadius()<=180) && (2*firstHand.sphereRadius()>=100) && ( indexFingerDistalBone.center().getY() <=  indexFinger.length() + firstHand.palmPosition().getY()+value ) && ( middleFingerDistalBone.center().getY() <=  middleFinger.length() + firstHand.palmPosition().getY()+value ) && ( ringFingerDistalBone.center().getY() <=  ringFinger.length() + firstHand.palmPosition().getY()+value ) && ( pinkyFingerDistalBone.center().getY() <=  pinkyFinger.length() + firstHand.palmPosition().getY()+value ) &&  ( thumbFingerDistalBone.center().getY() <=firstHand.palmPosition().getY()+value))
+			{
+				System.out.println("C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|");	
+			}
+			
+			//if ()
 			
 		}
 	}
