@@ -83,20 +83,17 @@ class NumbersTranslation extends Listener{
 											
 											
 											
-											/*System.out.println( "palmPosition Hand:" +hand.palmPosition().getY()
-															+"  ,bone distal fo index: "+ bone_distal_for_index.center().getY()			
-															+"  ,bone distal for middle: " + bone_distal_for_middle.center().getY() 
-															+"  ,bone distal for ring: " + bone_distal_for_ring.center().getY()  
-															+"  ,bone distal for pinky: " + bone_distal_for_pinky.center().getY()
-															+"  ,bone distal for thumb: "+bone_distal_for_thumb.center().getY());
-											//System.out.println(" ,length_index + hand.palmPosition().getY(): " +  ( length_index + hand.palmPosition().getY())  );*/
-											//System.out.println("---->Thumb lehgth: "+ length_thumb);
-											/*System.out.println("Sphere: "+ 2*hand.sphereRadius()
-																+ "  ,direction hand x: " +hand.direction().getX()
-																+ "  ,direction hand y: " +hand.direction().getY()
-																+ "  ,direction hand z: " +hand.direction().getZ());*/
-											//five
-											if( ( bone_distal_for_index.center().getY()+40 >=  length_index + hand.palmPosition().getY() ) && ( bone_distal_for_middle.center().getY()+40 >=  length_middle + hand.palmPosition().getY() ) && ( bone_distal_for_ring.center().getY()+40 >=  length_ring + hand.palmPosition().getY() ) && ( bone_distal_for_pinky.center().getY()+40 >=  length_pinky + hand.palmPosition().getY() ) && ( bone_distal_for_thumb.center().getY()+40 <=  length_thumb + hand.palmPosition().getY() ) ){
+											/*if( ( bone_distal_for_index.center().getY()+40 >=  length_index + hand.palmPosition().getY() ) && ( bone_distal_for_middle.center().getY()+40 >=  length_middle + hand.palmPosition().getY() ) && ( bone_distal_for_ring.center().getY()+40 >=  length_ring + hand.palmPosition().getY() ) && ( bone_distal_for_pinky.center().getY()+40 >=  length_pinky + hand.palmPosition().getY() ) && ( bone_distal_for_thumb.center().getY()+40 <=  length_thumb + hand.palmPosition().getY() ) ){
+												System.out.println("Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five");
+											}*/
+											boolean hand_left= hand.isLeft() ;
+											boolean hand_right= hand.isRight() ;
+											//five left
+											if( hand_left==true &&  hand_right== false  && ( bone_distal_for_index.center().getY()+40 >=  length_index + hand.palmPosition().getY() ) && ( bone_distal_for_middle.center().getY()+40 >=  length_middle + hand.palmPosition().getY() ) && ( bone_distal_for_ring.center().getY()+40 >=  length_ring + hand.palmPosition().getY() ) && ( bone_distal_for_pinky.center().getY()+40 >=  length_pinky + hand.palmPosition().getY() ) && ( bone_distal_for_thumb.center().getX()<=  length_thumb + hand.palmPosition().getX()+40 ) ){
+												System.out.println("Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five");
+											}
+											//five right
+											else if( hand_right== true && hand_left==false && ( bone_distal_for_index.center().getY()+40 >=  length_index + hand.palmPosition().getY() ) && ( bone_distal_for_middle.center().getY()+40 >=  length_middle + hand.palmPosition().getY() ) && ( bone_distal_for_ring.center().getY()+40 >=  length_ring + hand.palmPosition().getY() ) && ( bone_distal_for_pinky.center().getY()+40 >=  length_pinky + hand.palmPosition().getY() ) && ( bone_distal_for_thumb.center().getX() >=  length_thumb + hand.palmPosition().getX()+40 ) ){
 												System.out.println("Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five|Five");
 											}
 											//zero

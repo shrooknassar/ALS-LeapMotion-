@@ -95,7 +95,7 @@ public class Main_GUI {
 				}
 				
 				controller.removeListener(listener);
-				controller.removeListener(servoListener);
+				
 			}
 		});
 		btnNewButton.setForeground(new Color(0, 102, 102));

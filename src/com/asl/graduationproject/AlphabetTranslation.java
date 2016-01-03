@@ -204,10 +204,10 @@ public class AlphabetTranslation extends Listener {
 			}
 			
 			if( ( indexFingerDistalBone.center().getY() >=  firstHand.palmPosition().getY()+40) && ( indexFingerDistalBone.center().getY() <= indexFinger.length() + firstHand.palmPosition().getY()+40) && ( middleFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && middleFingerDistalBone.center().getY()>= firstHand.palmPosition().getY()-40) && ringFingerDistalBone.center().getY()<=firstHand.palmPosition().getY()+40 && ringFingerDistalBone.center().getY()>=firstHand.palmPosition().getY()-40 && pinkyFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && pinkyFingerDistalBone.center().getY() >= firstHand.palmPosition().getY()-40 && thumbFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && thumbFingerDistalBone.center().getY() >= firstHand.palmPosition().getY()-40 ){
-				System.out.println("X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|");
+				System.out.println("X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|");
 			}
 			if(ringFinger.tipPosition().getX() -pinkyFinger.tipPosition().getX() > 20 && 
-					(indexFinger.tipPosition().getX() -thumbFinger.tipPosition().getX()) > 20 )
+					( thumbFinger.tipPosition().getX()) - indexFinger.tipPosition().getX() > 20 )
 			{
 				System.out.println("Y");
 			}
