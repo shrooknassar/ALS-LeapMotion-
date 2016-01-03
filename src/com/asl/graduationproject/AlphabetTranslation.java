@@ -86,6 +86,12 @@ public class AlphabetTranslation extends Listener {
 				System.out.println("D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D|D");
 			}
 			
+			if( (indexFinger.tipPosition().getY()>thumbFinger.tipPosition().getY()  && middleFinger.tipPosition().getY()>thumbFinger.tipPosition().getY() && ringFinger.tipPosition().getY()>thumbFinger.tipPosition().getY() && ringFinger.tipPosition().getY()>thumbFinger.tipPosition().getY() )
+					&& ( ( indexFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && ( middleFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && ( ringFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && ( pinkyFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15 ) )
+			{
+				System.out.println("E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E|E");
+			}
+			
 			if( (Math.abs(thumbFinger.tipPosition().getY() - indexFinger.tipPosition().getY()) <= 5 ) && (pinkyFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=20 &&  ringFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=30  && middleFinger.tipPosition().getY() - thumbFinger.tipPosition().getY() >=35   ) )
 			{
 				System.out.println("F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F|F");
@@ -131,7 +137,22 @@ public class AlphabetTranslation extends Listener {
 				System.out.println("C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|C|");	
 			}
 			
-			//if ()
+			if(  (  thumbFinger.tipPosition().getX()>pinkyFingerProximalBone.center().getX() &&  thumbFinger.tipPosition().getX()<ringFingerProximalBone.center().getX()   )
+					&& ( Math.abs( indexFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( middleFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( ringFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( pinkyFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15 ) )
+			{
+				System.out.println("M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M|M");
+			}
+			if(  (  thumbFinger.tipPosition().getX()>ringFingerIntermediateBone.center().getX() &&  thumbFinger.tipPosition().getX()<middleFingerIntermediateBone.center().getX()   )
+					&& ( Math.abs( indexFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( middleFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( ringFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15  && Math.abs( pinkyFinger.tipPosition().getY()-firstHand.palmPosition().getY())<=15 ) )
+			{
+				System.out.println("N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N|N");
+			}
+			
+			else if( (2*firstHand.sphereRadius()<=80) && (2*firstHand.sphereRadius()>=60) && ( firstHand.palmPosition().getY()-40 <= indexFingerDistalBone.center().getY())  && ( firstHand.palmPosition().getY()-40 <= middleFingerDistalBone.center().getY()) && ( firstHand.palmPosition().getY()-40 <= ringFingerDistalBone.center().getY()) && ( firstHand.palmPosition().getY()-40 <= pinkyFingerDistalBone.center().getY()) && ( firstHand.palmPosition().getY()-40 <= thumbFingerDistalBone.center().getY())  &&  (firstHand.direction().getY()>=0) ){
+				System.out.println("O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O|O");
+				
+			}
+			
 			if((indexFinger.direction().roll() < 0 && indexFinger.direction().roll() > (-1.0*(22.0*7.0))) &&
 					middleFinger.direction().pitch() < 0 && middleFinger.direction().pitch() > (-1.0*(22.0*7.0)) &&
 					Math.abs(thumbFinger.tipPosition().getY() - middleFinger.tipPosition().getY())< 3 )
@@ -180,6 +201,10 @@ public class AlphabetTranslation extends Listener {
 					indexFinger.tipPosition().getY()>thumbFinger.tipPosition().getY()  )
 			{
 				System.out.println("W");
+			}
+			
+			if( ( indexFingerDistalBone.center().getY() >=  firstHand.palmPosition().getY()+40) && ( indexFingerDistalBone.center().getY() <= indexFinger.length() + firstHand.palmPosition().getY()+40) && ( middleFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && middleFingerDistalBone.center().getY()>= firstHand.palmPosition().getY()-40) && ringFingerDistalBone.center().getY()<=firstHand.palmPosition().getY()+40 && ringFingerDistalBone.center().getY()>=firstHand.palmPosition().getY()-40 && pinkyFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && pinkyFingerDistalBone.center().getY() >= firstHand.palmPosition().getY()-40 && thumbFingerDistalBone.center().getY() <= firstHand.palmPosition().getY()+40 && thumbFingerDistalBone.center().getY() >= firstHand.palmPosition().getY()-40 ){
+				System.out.println("X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|");
 			}
 			if(ringFinger.tipPosition().getX() -pinkyFinger.tipPosition().getX() > 20 && 
 					(indexFinger.tipPosition().getX() -thumbFinger.tipPosition().getX()) > 20 )
